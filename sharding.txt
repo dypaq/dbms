@@ -13,9 +13,9 @@ Config server
 
 go in cmd
 ##
-mongod --configsvr --port 27018 --replset rs1 --dbpath c:\data\conf
+mongod --configsvr --port 27018 --replSet rs1 --dbpath c:\data\conf
 
-mongod --configsvr --port 27018 --replset rs1 --dbpath c:\data\rconf
+mongod --configsvr --port 27018 --replSet rs1 --dbpath c:\data\rconf
 
 mongosh -portt 27018
 
@@ -24,9 +24,9 @@ rs.initiate({_id:'rs1',members:[{_id:0,host:'localhost:27018'},{_id:1,host:'loca
 ##
 shard server 1
 
-mongod --shardsvr --port 27020 --replset rs2 --dbpath c:\data\s1
+mongod --shardsvr --port 27020 --replSet rs2 --dbpath c:\data\s1
 
-mongod --shardsvr --port 27021 --replset rs2 --dbpath c:\data\s1r
+mongod --shardsvr --port 27021 --replSet rs2 --dbpath c:\data\s1r
 
 mongosh -port 27020
 
@@ -35,9 +35,9 @@ rs.initiate({_id:'rs2',members:[{_id:0,host:'localhost:27020'},{_id:1,host:'loca
 ##
 shard server 2
 
-mongod --shardsvr --port 27022 --replset rs3 --dbpath c:\data\s2
+mongod --shardsvr --port 27022 --replSet rs3 --dbpath c:\data\s2
 
-mongod --shardsvr --port 27023 --replset rs3 --dbpath c:\data\s2r
+mongod --shardsvr --port 27023 --replSet rs3 --dbpath c:\data\s2r
 
 mongosh -port 27022
 
